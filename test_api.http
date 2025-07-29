@@ -1,0 +1,15 @@
+### Test /status
+GET http://localhost:5000/status
+
+### Login to get token
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+### Use token to access protected route
+GET http://localhost:5000/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MzgxODUzOCwianRpIjoiYzAxOTljMGItNjRlMy00ZjhhLTlhY2EtMWZhZTUwNjk3YWQzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzUzODE4NTM4LCJjc3JmIjoiOTRhZjg4ODctNDc1Yi00YWM4LWE2ODctMTllYWY1NDVlNmRlIiwiZXhwIjoxNzUzODE5NDM4fQ.S6bJCRNtpBE-zc5H5Ol_4X67_unVJ-UpU5Za_a1Lx5s
