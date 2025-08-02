@@ -1,27 +1,40 @@
-# Flask JWT API
+# 🔐 Flask JWT API
 
-## Project Structure
+A minimal Flask API secured with JWT authentication and containerized using Docker.
 
-- `app.py`: Main Flask application with JWT authentication.
-- `requirements.txt`: Python dependencies.
-- `Dockerfile`: Container setup for running the app.
-- `test_api.http`: Example HTTP requests for testing the API.
+## 📁 Project Structure
 
-## How to Run with Docker
+- `app.py` — Main Flask application with JWT logic  
+- `requirements.txt` — Python dependencies  
+- `Dockerfile` — Docker setup to containerize the app  
+- `test_api.http` — HTTP requests for local testing  
 
-1. Build the Docker image:
-   ```sh
+## 🐳 How to Run with Docker
+
+1. **Build the Docker image**:
+   ```bash
    docker build -t flask-jwt-app .
    ```
-2. Run the container:
-   ```sh
-   docker run -p 5000:5000 flask-jwt-app
+
+2. **Run the Docker container**:
+   ```bash
+   docker run -d -p 5000:5000 flask-jwt-app
    ```
-3. The API will be available at `http://localhost:5000`.
 
-## How JWT Is Used
+3. **Access the API**:
+   http://localhost:5000/status
 
-- Users log in via `/login` with a username and password.
-- On successful login, a JWT token is returned.
-- Protected routes (like `/protected`) require the JWT token in the `Authorization: Bearer <token>` header.
-- The token is verified using the secret key
+## 🔐 How JWT Is Used
+
+- POST to `/login` with username and password  
+- Get a JWT token in response  
+- Use `Authorization: Bearer <token>` for `/protected` route  
+
+## ✅ Example Endpoints
+
+| Method | Endpoint     | Description                      |
+|--------|--------------|----------------------------------|
+| GET    | /status      | Check if API is running          |
+| POST   | /login       | Returns JWT on correct login     |
+| GET    | /protected   | JWT-protected route              |
+
