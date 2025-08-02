@@ -65,5 +65,3 @@ git clone git@github.com:username/repo.git            # Clone using SSH
 ```
 
 ---
-
-✅ Keep this file in your repository as internal documentation for future reference.
